@@ -2,9 +2,9 @@ from setuptools import setup
 
 setup(
     name='hashget-kernel_org',
-    version='0.3',
-    description='',
-    long_description='',
+    version='0.5',
+    description='kernel.org (linux kernel sources) plugin for hashget',
+    long_description='kernel.org (linux kernel sources) plugin for hashget',
     author='Yaroslav Polyakov',
     author_email='yaroslaff@gmail.com',
 
