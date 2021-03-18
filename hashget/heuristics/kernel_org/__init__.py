@@ -25,7 +25,8 @@ def kernel_url(v, pl, sl=None, extension=None):
 class LinuxKernelHeuristic(BaseHeuristic):
     codename = 'kernel'
 
-    def __init__(self):
+    def __init__(self, hashdb=None):
+        super().__init__(hashdb)
         self.pattern = re.compile('linux-(?P<version>[\d]+)\.(?P<patchlevel>[\d]+)(\.(?P<sublevel>[\d]+))?\.'
                                   '(?P<extension>tar\.gz|tar\.xz|tar\.bz2)')
 
@@ -52,7 +53,10 @@ class LinuxKernelHeuristic(BaseHeuristic):
 class LinuxMakefileHeuristic(BaseHeuristic):
     codename = 'kernelmake'
 
-    def __init__(self):
+    def __init__(self, hashdb=None):
+ 
+        super().__init__(hashdb)
+ 
         # few files (our of 213 total) which are common for 1.0 - 5.0.5
         self.checkfiles = [
             './drivers/block/floppy.c',
